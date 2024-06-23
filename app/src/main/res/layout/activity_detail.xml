@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="activity"
+            type="com.alhalimthoriqfebrian.noteapp.ui.activity.DetailActivity" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/detail_title_note_text_view"
+            style="@style/TextInputLayoutBoxColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:hint="@string/enter_title"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:text="@string/title"
+            android:textColor="@color/textColorButton"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/detail_note_description_text_view"
+            style="@style/TextInputLayoutBoxColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:hint="@string/enter_description"
+            android:paddingLeft="@dimen/_8sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:text="@string/description"
+            android:textColor="@color/textColorButton"
+            android:textSize="18sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="250dp"
+            android:background="@drawable/background_button"
+            android:gravity="center"
+            android:onClick="editData"
+            android:padding="@dimen/_7sdp"
+            android:text="@string/edit"
+            android:textColor="@color/white" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="250dp"
+            android:background="@drawable/background_button"
+            android:gravity="center"
+            android:onClick="deleteData"
+            android:padding="@dimen/_7sdp"
+            android:text="@string/delete"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</layout>

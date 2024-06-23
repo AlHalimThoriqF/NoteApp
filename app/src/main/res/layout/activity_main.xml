@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="model"
+            type="com.alhalimthoriqfebrian.noteapp.model.NoteModel"/>
+        <variable
+            name="adapter"
+            type="com.alhalimthoriqfebrian.noteapp.adapter.NoteAdapter" />
+        <variable
+            name="activity"
+            type="com.alhalimthoriqfebrian.noteapp.ui.activity.MainActivity" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <LinearLayout
+            android:id="@+id/top_layout"
+            android:layout_width="0dp"
+            android:background="@color/backgroundNote"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <Button
+                android:id="@+id/button_add_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="addData"
+                android:text="@string/add_data"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorPrimary" />
+            <Space
+                android:layout_width="190dp"
+                android:layout_height="match_parent" />
+            <Switch
+                android:id="@+id/switch_dark_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onCheckedChanged="@{(button, bool)-> activity.switchDarkMode(bool)}"
+                android:thumb="@drawable/ic_dark_mode"
+                android:thumbTint="@color/thumbTintMoon"
+                android:track="@drawable/background_switch_dark_mode"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/backgroundNote"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:adapter="@{adapter}"
+            app:layout_constraintTop_toBottomOf="@id/top_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
